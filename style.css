@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    background-color: #ffd6e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 50px;
+    overflow: hidden;
+}
+
+/* Title Styling */
+.bubbly-text {
+    font-size: 2.5rem;
+    color: #ff4081;
+    text-shadow: 2px 2px 10px rgba(255, 64, 129, 0.5);
+}
+
+/* 💖 Cute Bio Box */
+.bio {
+    background-color: white;
+    width: 80%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px dashed #ff4081;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff4081;
+    margin: 20px 0;
+    animation: floatAnimation 3s infinite ease-in-out;
+}
+
+/* Floating Effect */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Buttons Container */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+}
+
+/* Terms & Conditions (Moved Below Bio) */
+.terms {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #ff4081;
+    margin-bottom: 10px;
+}
+
+/* Yes & No Buttons Side by Side */
+.buttons button {
+    font-size: 20px;
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+/* Yes Button */
+#yes-btn {
+    background-color: #ff4081;
+    color: white;
+}
+
+/* No Button (Moves Away) */
+#no-btn {
+    background-color: #b0bec5;
+    color: black;
+    position: absolute;
+}
+
+/* Buttons Get Bigger When Hovered */
+button:hover {
+    transform: scale(1.2);
+}

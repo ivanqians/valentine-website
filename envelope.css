@@ -1,0 +1,115 @@
+/* Import Pacifico Font */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* General Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe4e1;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Title Styling */
+h1.bubbly-text {
+    font-size: 2.5rem;
+    color: #ff1493;
+    text-shadow: 3px 3px 7px #ff69b4;
+    margin-bottom: 40px;
+}
+
+/* Envelope Container */
+.envelope-container {
+    position: relative;
+    width: 700px;
+    height: 450px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Envelope Back */
+.envelope-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff6699;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+/* Envelope Flap */
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    background: #ff4d88;
+    border-radius: 20px 20px 0 0;
+    clip-path: polygon(5% 0%, 95% 0%, 50% 100%);
+    transform-origin: top;
+    transition: transform 0.6s ease-in-out;
+    z-index: 2;
+}
+
+/* Envelope Front */
+.envelope-front {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+    background: #ff3366;
+    border-radius: 0 0 20px 20px;
+    z-index: 3;
+}
+
+/* Hidden Letter - Now Fits Properly */
+.letter {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    width: 580px; /* Optimized width to prevent text cutoff */
+    height: 400px; /* Adjusted to fit perfectly inside */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateX(-50%) translateY(100%);
+    transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem; /* Reduced slightly for better fit */
+    color: #d63384;
+    font-weight: normal;
+    padding: 25px;
+    text-align: left;
+    line-height: 1.5; /* Improves text flow */
+    z-index: 4;
+    opacity: 0;
+    overflow-y: auto; /* Enables scroll if needed */
+}
+
+/* Scrollbar Styling */
+.letter::-webkit-scrollbar {
+    width: 6px;
+}
+
+.letter::-webkit-scrollbar-thumb {
+    background-color: #ff69b4;
+    border-radius: 10px;
+}
+
+.letter::-webkit-scrollbar-track {
+    background: #ffe4e1;
+}
+
+/* Open Envelope Animation */
+.open .letter {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
